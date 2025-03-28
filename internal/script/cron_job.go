@@ -12,7 +12,7 @@ import (
 
 func StartCronJob(loader loader.LoaderInterface) {
 	c := cron.New()
-	_, err := c.AddFunc("* * * * *", func() {
+	_, err := c.AddFunc(util.CRON_JOB_SCHEDULER, func() {
 		log.Println("starting scheduled data refresh...")
 		err := RunCSVLoader(loader)
 		if err != nil {
