@@ -1,22 +1,30 @@
 package main
 
 import (
-	"fmt"
-
+	"github.com/Afthaab/Sales-Report-Lumel/internal/config"
 	database "github.com/Afthaab/Sales-Report-Lumel/internal/database/postgres"
-	"github.com/rs/zerolog/log"
-
-	"github.com/joho/godotenv"
+	"github.com/Afthaab/Sales-Report-Lumel/internal/handler"
+	"github.com/Afthaab/Sales-Report-Lumel/internal/loader"
+	"github.com/Afthaab/Sales-Report-Lumel/internal/repository"
+	"github.com/Afthaab/Sales-Report-Lumel/internal/script"
+	"github.com/Afthaab/Sales-Report-Lumel/internal/server"
+	"github.com/Afthaab/Sales-Report-Lumel/internal/service"
 )
 
-func init() {
-	err := godotenv.Load()
-	if err != nil {
-		log.Fatal().AnErr("error", err).Msg("faile to load the env file")
-	}
-}
-
 func main() {
+	config.LoadEnv()
+
 	db := database.ConnectToDatabase()
-	fmt.Println(db)
+
+	repo := repository.NewRepoLayer(db)
+
+	loader := loader.NewLoader(db, repo)
+
+	script.StartCronJob(loader) // cron job
+
+	svc := service.NewServiceLayer(repo)
+
+	handler := handler.NewHandlerLayer(loader, svc)
+
+	server.StartApplication(handler)
 }
