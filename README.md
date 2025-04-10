@@ -1,4 +1,4 @@
-# Sales-Report-Lumel
+# Sales-Report
 
 This project is a backend system built with Golang and PostgreSQL to process large CSV files containing sales data, store them in a normalized database, and provide RESTful APIs for analysis.
 
@@ -15,17 +15,17 @@ This project is a backend system built with Golang and PostgreSQL to process lar
 ## Installation
 1. Clone the repository:
    ```sh
-   git clone https://github.com/Afthaab/Sales-Report-Lumel.git
+   git clone https://github.com/Afthaab/Sales-Report
    cd your-repo
    ```
 
 2. Add the Environment Variables to the env file:
    ```sh
-   DSN="host=localhost user=your_user password=your_db_password dbname=lumel_sales port=your_db_port sslmode=disable TimeZone=Asia/Kolkata"
+   DSN="host=localhost user=your_user password=your_db_password dbname=sales port=your_db_port sslmode=disable TimeZone=Asia/Kolkata"
    ```
    Update `.env` with the correct database credentials.
      ```sh
-      CREATE DATABASE lumel_sales;
+      CREATE DATABASE sales;
    ```
      Create Database in your postgres
 
@@ -37,7 +37,7 @@ This project is a backend system built with Golang and PostgreSQL to process lar
 
 5. Start the application:
    ```sh
-   go run ./cmd/app/sales_report_lumel/main.go
+   go run ./cmd/app/sales_report/main.go
    ```
 
 ## Database Schema
