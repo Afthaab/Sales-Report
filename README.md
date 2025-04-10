@@ -1,4 +1,4 @@
-# Sales-Report-Lumel
+# Sales-Report
 
 This project is a backend system built with Golang and PostgreSQL to process large CSV files containing sales data, store them in a normalized database, and provide RESTful APIs for analysis.
 
