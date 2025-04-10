@@ -2,7 +2,7 @@ package script
 
 import (
 	"github.com/Afthaab/Sales-Report-Lumel/internal/loader"
-	"github.com/Afthaab/Sales-Report-Lumel/internal/util"
+	util "github.com/Afthaab/Sales-Report-Lumel/internal/utils"
 )
 
 func RunCSVLoader(loader loader.LoaderInterface) error {

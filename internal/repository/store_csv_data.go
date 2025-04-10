@@ -6,7 +6,7 @@ import (
 
 	"github.com/Afthaab/Sales-Report-Lumel/internal/model/csvmodel"
 	"github.com/Afthaab/Sales-Report-Lumel/internal/model/dbmodel"
-	"github.com/Afthaab/Sales-Report-Lumel/internal/util"
+	util "github.com/Afthaab/Sales-Report-Lumel/internal/utils"
 	"github.com/rs/zerolog/log"
 )
 

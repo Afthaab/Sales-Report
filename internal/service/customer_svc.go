@@ -3,7 +3,7 @@ package service
 import (
 	"time"
 
-	"github.com/Afthaab/Sales-Report-Lumel/internal/util"
+	util "github.com/Afthaab/Sales-Report-Lumel/internal/utils"
 	"github.com/rs/zerolog/log"
 )
 
